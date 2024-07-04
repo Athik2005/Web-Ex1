@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>King-Dom Ticket Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url("wild.jpg"); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Light black with opacity */
+            z-index: -1;
+        }
+
+        .container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align items to the start to account for margin-top */
+            padding-top: 100px; /* Ensures there's space from the top */
+        }
+
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.8); /* Transparent white background for form */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            margin-top: 20px; /* Additional margin to move the form a few inches below the header */
+        }
+
+        header {
+            background-color: #1A4D2E;
+            padding: 12px 0;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            font-size: 22px;
+            z-index: 1000;
+        }
+
+        .font-head {
+            font-weight: 700;
+            color: white;
+            font-size: 40px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #1A4D2E;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #123d23;
+        }
+
+        h1 {
+            color: #1A4D2E;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: #1A4D2E;
+            box-shadow: 0 0 5px rgba(26, 77, 46, 0.5);
+            outline: none;
+        }
+
+        .navbar-nav .nav-link {
+            color: white;
+            margin-left: 10px;
+        }
+        .font{
+            font-size: 32px;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" style="font-size: 32px;" href="#"><b>King-Dom</b></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="Ex-1.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="booking.html">Bookings</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about-final.html">About-us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="D:\Web-Tech\index.html">Log-in</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Animal Category
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <li><a class="dropdown-item" href="#Beasties">Beasties</a></li>
+                              <li><a class="dropdown-item" href="#Aves">Aves</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="#Brutes">Brutes</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="form-container">
+            <form method="post" class="was-validated">
+                <div>
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" class="form-control" required>
+                <div class="valid-feedback">Valid</div>
+                <div class="invalid-feedback">Invalid</div>
+                </div>
+                <div>
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+                <div class="valid-feedback">Valid</div>
+                <div class="invalid-feedback">Invalid</div>
+                </div>
+                <div>
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" class="form-control" required>
+                <div class="valid-feedback">Valid</div>
+                <div class="invalid-feedback">Invalid</div>
+                </div>
+                <div>
+                <label for="date">Date of Visit</label>
+                <input type="date" id="date" name="date" class="form-control" required>
+                <div class="valid-feedback">Valid</div>
+                <div class="invalid-feedback">Invalid</div>
+                </div>
+                <label for="tickets">Number of Tickets</label>
+                <input type="number" id="tickets" name="tickets" class="form-control" required min="1">
+                <div class="valid-feedback">Valid</div>
+                <div class="invalid-feedback">Invalid</div>
+
+                <label for="preferences">Special Preferences</label>
+                <textarea id="preferences" name="preferences" rows="4" placeholder="Enter any special requests here..."></textarea>
+
+                <button type="submit">Book Now</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
